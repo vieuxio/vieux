@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vieux by vieuxjs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Vieux</h1>
+      <h2 class="project-tagline">The framework-agnostic, forward-thinking UI architecture</h2>
+      <a href="https://github.com/vieuxjs/vieux" class="btn">View on GitHub</a>
+    </section>
+
+    <section class="main-content">
+      <p><img align="right" width="50%" src="https://cloud.githubusercontent.com/assets/698308/9088776/76309340-3b9a-11e5-8388-b53a5a4b082d.png"></p>
+
+<p>Join us on <a href="http://slack.vieuxjs.org"><img src="http://slack.vieuxjs.org/badge.svg" alt="Vieux Slack"></a> for anything about Vieux.</p>
+
+<p>Check out example implementations with various frameworks in <a href="https://github.com/vieuxjs">our other repositories</a>.</p>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>The JavaScript community is teeming with new approaches to common architectural problems every other day. The amount of information that surfaces in a week is probably more than it did in a year, just 15 years ago. It seems that every other developer is introducing a new approach, and one has to spend hours after hours if they want to learn these in detail.</p>
+
+<p>Some ideas are new, but most of them are just a rebranding and mashup of old ideas. Of course, it is safe to claim that there is nothing really new under the sun. In fact, GUI programming is a field that’s being pursued for about 40 years. It would be naïve to say that an idea is brand new, in this sense.</p>
+
+<p>But so here we are. I present you <em>Vieux</em>, a new approach to building scalable and maintainable JavaScript applications. <em>Vieux</em> specializes not only in its gorgeous approach, but also its use of terminology. When designing <em>Vieux</em>, we got inspired by the things around us. Hopefully, you will feel at home with this down-to-earth, contextual naming convention.</p>
+
+<h2>
+<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Motivation</h2>
+
+<p>We believe that software developers deserve better. So we are unveiling an architecture that we’ve been internally using for about 4 years. The best thing about <em>Vieux</em> is that it’s just a set of ideas that you can implement anywhere. Whether you are using Vanilla JS, Angular, React or any other framework, <em>Vieux</em> is easy to reason about, and easy to implement.</p>
+
+<p>We believe that software developers deserve better. There is an ongoing debate about what MVC means, or what a Store is and how it should be implemented. Every framework and every developer has a different connotation for these keywords. So we wish to end the ambiguity once and for all.</p>
+
+<h2>
+<a id="approach" class="anchor" href="#approach" aria-hidden="true"><span class="octicon octicon-link"></span></a>Approach</h2>
+
+<p><em>Vieux</em> is based on a modular, componentized architecture. We believe that Single Responsibility is a great idea when it comes to building applications; so <em>Vieux</em> is against roles that span multiple responsibilities. This gives us the edge that every part of an app is self-evident.</p>
+
+<p><em>Vieux</em> won’t keep you from introducing new roles to it, though. We know that every application is unique, and one could certainly need a different role than what are being currently offered in <em>Vieux</em>. So, <em>Vieux</em> is not a dogma, but a pointer in the direction of salvation. It’s a general frame that you can paint inside, to your heart’s content. As long as you don’t paint over the frame, the end result will satisfy you.</p>
+
+<h2>
+<a id="structure" class="anchor" href="#structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Structure</h2>
+
+<p><em>Vieux</em> offers 7 different roles to sketch your application in a 3-tier architecture. Five of the roles are at the core of <em>Vieux</em> and they are named <em>Culture</em>, <em>Representative</em>, <em>Regime</em>, <em>Undertaker</em> and <em>Stereotype</em>. The last two, <em>Diplomat</em> and <em>Satellite</em>, are auxiliary roles, from which more complex applications would benefit.</p>
+
+<p>Apart from these roles, <em>Vieux</em> also makes use of a concept called Unions. Unions are a contextual group of roles, comprising of related <em>Culture</em>s, <em>Representative</em>s, <em>Regime</em>s, etc. Normally, Unions are contextual associations. They exist to imply a close collaboration within a group of roles. Unions are useful when drawing the big picture, dealing with folder and file organizations in an application and provide an easier mental model of your code structure.</p>
+
+<p><em>Vieux</em> favors bureaucracy — half-duplex information flow, if you will—so the data flows only in one direction at any given time, as in the following example:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/698308/9088152/53c51914-3b97-11e5-9882-cbe14af9f6f1.png" alt="1 hsgphlgoodcoq9zqk4bl3g"></p>
+
+<h2>
+<a id="a-simple-overview" class="anchor" href="#a-simple-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>A simple overview</h2>
+
+<p>In the most abstract terms — that no one can get their heads around — every application models a state. In <em>Vieux</em>, <em>Regime</em>s are responsible for keeping the application state in memory, usually represented through <em>Stereotype</em>s. If necessary, they persist their state through stateless <em>Undertaker</em>s. For different persistence mechanisms, (eg. WebSQL, LocalStorage, AJAX or WebSockets) <em>Undertaker</em>s may use different <em>Satellite</em>s. <em>Culture</em>s are what the end-users are presented. They are stateless and as dummy as possible. Their state is kept and translated to the application state via <em>Representative</em>s. That is, <em>Culture</em>s inform <em>Representative</em>s when an update from the user is received; and <em>Representative</em>s process this update appropriately before transmitting it to a relevant <em>Regime</em>. An application consists of a number of <em>Regime</em>s, obviously, and their communications are carried out with <em>Diplomat</em>s.</p>
+
+<h2>
+<a id="roles" class="anchor" href="#roles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roles</h2>
+
+<h3>
+<a id="stereotype" class="anchor" href="#stereotype" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stereotype</h3>
+
+<p>A <em>Stereotype</em> is an embodiment of a unique piece of information in your application. It might be a user, an account, a product, a shopping cart item, a credit card, or any unique embodiment that your application operates on. They hold a state in memory, and may include minor behaviors for manipulating some of their properties. <em>Regime</em>s are responsible for the creation and management of <em>Stereotype</em>s.</p>
+
+<h3>
+<a id="culture" class="anchor" href="#culture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Culture</h3>
+
+<p><em>Culture</em> is a role that determines your user interface. It defines what your users see on the page. <em>Culture</em> includes a lot of predefined behaviors, like what happens when a user clicks on a button. <em>Culture</em>s are extremely dummy, in that they have no memory, or state, of their own. They know how to draw a user interface and how to handle user input; which they delegate to the <em>Representative</em>s.</p>
+
+<p><em>Culture</em>s can contain other <em>Culture</em>s, in which case the children would be called sub<em>Culture</em>s. A list of clickable items in an application would be an instance of a <em>Culture</em> <em>List</em>, and individual items would each be instances of another <em>Culture</em> <em>ListItem</em>. Here, <em>List</em> has a number of <em>ListItem</em>s as its <em>subculture</em>s. Obviously, both <em>Culture</em>s have different behaviors and responsibilities. You see where we are getting at.</p>
+
+<p>Every <em>Culture</em> has a <em>Representative</em> of its own. Some <em>Culture</em>s are broad and generic, while others present <em>Stereotype</em>s to the end user. In the above example, <em>Culture</em>s <em>List</em> and <em>ListItem</em> are responsible for presenting respective <em>Stereotype</em>s to the user.</p>
+
+<p><em>Culture</em>s may welcome other, arbitrary <em>Culture</em>s as immigrant sub<em>Culture</em>s. These are commonly used as placeholders, as in modal presentations, whose content may vary greatly and therefore separated from a modal implementation.</p>
+
+<h3>
+<a id="representative" class="anchor" href="#representative" aria-hidden="true"><span class="octicon octicon-link"></span></a>Representative</h3>
+
+<p>A <em>Representative</em> has two responsibilities. First, it keeps the state of its related <em>Culture</em>, and second, it is responsible for negotiating some of the behaviors of <em>Culture</em>s with respective <em>Regime</em>s. These negotiations may include transformations, filtering, or other means. If a <em>Stereotype</em> is involved in the <em>Culture</em> for a given <em>Representative</em>, the <em>Representative</em> is also responsible for keeping the <em>Stereotype</em>.</p>
+
+<h3>
+<a id="regime" class="anchor" href="#regime" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regime</h3>
+
+<p>A <em>Regime</em> is a stateful institution that deals with all the aspects of a specific purpose in an application. They breed, keep state of, and operate on <em>Stereotype</em>s. For complex task that would span different responsibilities, a <em>Regime</em> should negotiate with other <em>Regime</em>s, preferably over <em>Diplomat</em>s. Although they are responsible for keeping application state of a specific purpose, <em>Regime</em>s don’t necessarily involve in persisting that state. For persistence, <em>Regime</em>s should delegate to <em>Undertaker</em>s.</p>
+
+<p>It’s worth mentioning that in very complex applications the developer may choose to implement two layers of <em>Regime</em>s on top of each other.</p>
+
+<p>UI Applications often need to keep a global state for application life cycle management. We recommend using a Global<em>Regime</em> for this purpose.</p>
+
+<h3>
+<a id="undertaker" class="anchor" href="#undertaker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Undertaker</h3>
+
+<p>An <em>Undertaker</em> is responsible for persistence, serialization and deserialization of <em>Stereotype</em> instances. <em>Undertaker</em>s are completely stateless, and only deal with information passed onto them by <em>Regime</em>s. Normally, an <em>Undertaker</em> would use one specific technology for persistence, such as AJAX, WebSockets, or LocalStorage.</p>
+
+<p>In some rare circumstances, the same data (or a variation of it) might need to be persisted to two different technologies. In this case, the developer may choose to delegate technology-specific persistence responsibilities to individual <em>Satellite</em>s.</p>
+
+<h3>
+<a id="satellite" class="anchor" href="#satellite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Satellite</h3>
+
+<p>A <em>Satellite</em> is a stateless role, whose purpose is to abstract away a certain persistence technology. <em>Satellite</em>s persist serialized data. Most applications work with a single technology, so <em>Satellite</em>s are mostly redundant.</p>
+
+<h3>
+<a id="diplomat" class="anchor" href="#diplomat" aria-hidden="true"><span class="octicon octicon-link"></span></a>Diplomat</h3>
+
+<p>A <em>Diplomat</em>’s principal concern is to foster peaceful relations between <em>Regime</em>s. <em>Diplomat</em>s are quasi-autonomous in nature, in that they deal with <em>Regime</em>s, but are not owned by, or disposed by <em>Regime</em>s. They live as singletons, and are tasked with carrying out events to listeners. A <em>Regime</em> can choose to publish an event over a <em>Diplomat</em>, and other <em>Regime</em>s who are interested can receive the event and operate as a result.</p>
+
+<p>In other circumstances that deal with UI state, reaching out to <em>Regime</em>s are unfavorable. When this is the case, <em>Representative</em>-level <em>Diplomat</em>s can also be used.</p>
+
+<h3>
+<a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h3>
+
+<p>The ideas presented in <em>Vieux</em> are the pillars of a maintainable application architecture. It’s been used in huge JavaScript applications in production since 2011. We thought it would fade over with time, but to our surprise, the ideas in <em>Vieux</em> matured with every new framework since then.</p>
+
+<p>Today, <em>Vieux</em> is a suitable application architecture for nearly every major framework. In fact, we are hard at work with providing example implementations of <em>Vieux</em> on every framework we can get our hands on. <em>Vieux</em> is still very young, and we’re working hard on our GitHub organization to bring it up as an extensive resource for all your needs.</p>
+
+<p><em>Vieux</em> has shed a pleasant light on our journeys in GUI programming for about 4 years. We believe it’s mature and battle-hardened enough to share it with the world, and we hope that it will also be a good companion for you.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2015 Vieux
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/vieuxjs/vieux">Vieux</a> is maintained by <a href="https://github.com/vieuxjs">vieuxjs</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+
+  </body>
+</html>
