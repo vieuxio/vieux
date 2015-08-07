@@ -6,6 +6,8 @@ Join us on [![Vieux Slack](http://slack.vieuxjs.org/badge.svg)](http://slack.vie
 
 Check out example implementations with various frameworks in [our other repositories](https://github.com/vieuxjs).
 
+For further information and a deeper insight, please refer to [our Wiki](https://github.com/vieuxjs/vieux/wiki).
+
 ## Introduction
 The JavaScript community is teeming with new approaches to common architectural problems every other day. The amount of information that surfaces in a week is probably more than it did in a year, just 15 years ago. It seems that every other developer is introducing a new approach, and one has to spend hours after hours if they want to learn these in detail.
 
