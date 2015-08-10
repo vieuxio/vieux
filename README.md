@@ -2,11 +2,11 @@
 # Vieux
 ###### The framework-agnostic, forward-thinking UI architecture
 
-Join us on [![Vieux Slack](http://slack.vieuxjs.org/badge.svg)](http://slack.vieuxjs.org) for anything about Vieux.
+Join us on [![Vieux Slack](http://slack.vieux.io/badge.svg)](http://slack.vieux.io) for anything about Vieux.
 
-Check out example implementations with various frameworks in [our other repositories](https://github.com/vieuxjs).
+Check out example implementations with various frameworks in [our other repositories](https://github.com/vieuxio).
 
-For further information and a deeper insight, please refer to [our Wiki](https://github.com/vieuxjs/vieux/wiki).
+For further information and a deeper insight, please refer to [our Wiki](https://github.com/vieuxio/vieux/wiki).
 
 ## Introduction
 The JavaScript community is teeming with new approaches to common architectural problems every other day. The amount of information that surfaces in a week is probably more than it did in a year, just 15 years ago. It seems that every other developer is introducing a new approach, and one has to spend hours after hours if they want to learn these in detail.
