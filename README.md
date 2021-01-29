@@ -1,5 +1,7 @@
 <img align="right" width="50%" src="https://cloud.githubusercontent.com/assets/698308/9088776/76309340-3b9a-11e5-8388-b53a5a4b082d.png"/>
+
 # Vieux
+
 ###### The framework-agnostic, forward-thinking UI architecture
 
 Join us on [![Vieux Slack](http://slack.vieux.io/badge.svg)](http://slack.vieux.io) for anything about Vieux.
